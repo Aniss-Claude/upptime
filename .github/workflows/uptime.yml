@@ -24,6 +24,16 @@ on:
 concurrency:
   group: ${{ github.repository }}-${{ github.head_ref || github.ref_name }}-upptime
   cancel-in-progress: false
+# The Aniss-Claude org forces the default GITHUB_TOKEN to read-only, so these
+# workflows 403'd on push. Granting the two scopes Upptime actually needs at the
+# workflow level keeps the org's safe read-only default intact everywhere else
+# and avoids having to mint a personal access token.
+#   contents: commit history/graphs/api and push the built site to gh-pages
+#   issues:   open an issue when a site goes down, close it when it recovers
+permissions:
+  contents: write
+  issues: write
+
 jobs:
   release:
     name: Check status
