@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Aniis",
+    "url": "https://aniis.ai",
+    "icon": "https://icons.duckduckgo.com/ip3/aniis.ai.ico",
+    "slug": "aniis",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 168,
+    "timeDay": 168,
+    "timeWeek": 168,
+    "timeMonth": 168,
+    "timeYear": 168,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Aniis API",
+    "url": "https://aniis-api.onrender.com/v1/health",
+    "icon": "https://icons.duckduckgo.com/ip3/aniis-api.onrender.com.ico",
+    "slug": "aniis-api",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 215,
+    "timeDay": 215,
+    "timeWeek": 215,
+    "timeMonth": 215,
+    "timeYear": 215,
+    "dailyMinutesDown": {}
+  }
+]
