@@ -1,0 +1,49 @@
+owner: Aniss-Claude
+repo: upptime
+
+# Why this repo is PUBLIC, and must stay public:
+# Upptime runs on GitHub Actions. At a 5-minute cadence that is roughly 8,600
+# workflow runs a month. On a PRIVATE repo those runs bill against the org's
+# 2,000 free monthly Actions minutes — the same budget that ran dry on
+# 2026-07-30 and took CI down until the 1 August reset. On a PUBLIC repo,
+# Actions minutes are unlimited, so the status page costs nothing and cannot
+# starve CI. Flipping this repo to private would break both at once.
+
+sites:
+  - name: Aniis
+    url: https://aniis.ai
+
+  # API liveness. Points at Render's hostname rather than api.aniis.ai on
+  # purpose: api.aniis.ai currently resolves to the AWS ALB, whose ECS services
+  # are scaled to 0, so it answers 503. Switch to https://api.aniis.ai/v1/health
+  # as part of the AWS cutover — monitoring the customer-facing hostname is the
+  # end state, because it also catches DNS and certificate failures.
+  - name: Aniis API
+    url: https://aniis-api.onrender.com/v1/health
+
+status-website:
+  cname: status.aniis.ai
+  name: Aniis
+  introTitle: "**Aniis** system status"
+  introMessage: Live availability for the Aniis website and API, checked every five minutes from GitHub's infrastructure — deliberately outside our own hosting, so this page stays up when we don't.
+  navbar:
+    - title: Status
+      href: /
+    - title: Aniis
+      href: https://aniis.ai
+  # Aniis green-trust palette (ADR 0003): #143f37 primary, #245d50 accent.
+  customCSS: |
+    :root {
+      --ifm-color-primary: #245d50;
+      --ifm-color-primary-dark: #1f5246;
+      --ifm-color-primary-darker: #1c4d42;
+      --ifm-color-primary-darkest: #143f37;
+      --ifm-color-primary-light: #29685a;
+      --ifm-color-primary-lighter: #2b6d5e;
+      --ifm-color-primary-lightest: #33806e;
+    }
+
+# Downtime opens a GitHub issue in this repo and assigns it, so an outage
+# arrives as a notification rather than something you have to go looking for.
+assignees:
+  - rashowd-lgtm
