@@ -47,3 +47,21 @@ site recovers. Watch this repo to get those as notifications.
 
 Everything lives in [`.upptimerc.yml`](.upptimerc.yml). Full options:
 <https://upptime.js.org/docs/configuration>.
+
+## ⚠️ Template auto-update is deliberately switched off
+
+Upptime ships an **Update Template CI** workflow that runs daily and rewrites
+everything under `.github/**` from the upstream `upptime/upptime` repo. Two
+reasons it is disabled here, and `.templaterc.json` is set to sync nothing:
+
+1. **It would break this repo within a day.** The `Aniss-Claude` org forces the
+   default `GITHUB_TOKEN` to read-only, so the workflows carry explicit
+   `permissions: contents/issues: write` blocks. A template sync overwrites those
+   files, the next scheduled check 403s on push, and the status page quietly
+   freezes with no failure anyone would notice.
+2. **An unattended daily job that rewrites its own workflow files from a
+   third-party repository is a supply-chain risk** worth declining on a repo that
+   holds write access to this org.
+
+To take an upstream update, do it deliberately: diff against
+`upptime/upptime`, re-apply the `permissions:` blocks, and push.
