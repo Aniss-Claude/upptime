@@ -28,9 +28,9 @@ There is nothing sensitive here: the monitored URLs are public hostnames, and
 
 ## What is checked
 
-| Site | URL | Note |
-| --- | --- | --- |
-| Aniis | `https://aniis.ai` | Customer-facing web |
+| Site      | URL                                        | Note                                                            |
+| --------- | ------------------------------------------ | --------------------------------------------------------------- |
+| Aniis     | `https://aniis.ai`                         | Customer-facing web                                             |
 | Aniis API | `https://aniis-api.onrender.com/v1/health` | Switches to `https://api.aniis.ai/v1/health` at the AWS cutover |
 
 The API check points at Render's hostname for now because `api.aniis.ai` resolves
