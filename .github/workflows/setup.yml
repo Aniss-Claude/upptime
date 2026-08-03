@@ -14,6 +14,10 @@
 # * More by Anand Chowdhary: https://anandchowdhary.com
 
 
+# NOTE (Aniis): the "do not edit directly" banner above no longer applies here.
+# Update Template CI is disabled and .templaterc.json syncs nothing, so this file is
+# maintained by hand. See docs/ops/status-page.md in Aniss-Claude/aniis-claude.
+
 name: Setup CI
 on:
   push:
